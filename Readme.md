@@ -1,0 +1,37 @@
+**W.I.P.**
+
+A Node.js Docker image for development based on the official node docker image. Uses nodeamon to automatically restart node when new files are added or existing files are changed in the mounted volume.
+
+Please note: This image should not be used in production environments!
+
+# Build
+
+## Clone the Repository
+## Move in the Directory
+## Run the Build Command
+
+```
+docker build -t node-development .
+```
+
+
+# Run
+
+```
+docker run -it -d -p 8080:3000 -v $HOME/Code/docker/testnode/:/nodeapp/ --name my-node-app node-development
+
+```
+
+## Install NPM Packages
+Browse to your mounted volume which includes a _package.json_ file and run the following command to install all dependencies.
+
+```
+docker exec -it my-node-app npm install /nodeapp
+```
+
+# Contribute
+As this image is still a work in progress, feel free to contribute :)
+
+# ToDo
+- Try to make the nodeamon command dynamically on build so "server.js" can be defined and changed to "app.js" or "index.js"
+- Do we need to EXPOSE the port?
