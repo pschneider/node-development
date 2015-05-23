@@ -13,5 +13,5 @@ RUN cd /nodeapp
 
 ENV NODE_ENV development
 
-CMD ["nodemon", "server.js"]
+CMD ["nodemon", "app.js"]
 
