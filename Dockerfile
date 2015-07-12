@@ -13,4 +13,4 @@ RUN cd /src
 
 ENV NODE_ENV development
 
-CMD ["forever", "-w", "app.js"]
+CMD ["forever", "-w", "index.js"]
